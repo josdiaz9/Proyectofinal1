@@ -1,0 +1,89 @@
+.chat-interface {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 30%;
+    min-width: 300px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header de tu perfil */
+.my-profile-header {
+    background-color: #f0f2f5;
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.avatar-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contacts-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.contact-item {
+    display: flex;
+    padding: 12px;
+    align-items: center;
+    border-bottom: 1px solid #f2f2f2; /* Línea divisoria más sutil */
+    text-decoration: none;
+    color: black;
+    background-color: #ffffff; /* Fondo blanco para la lista */
+    transition: background-color 0.2s ease;
+}
+
+.contact-item:hover {
+    background-color: #f5f6f6;
+}
+
+.contact-item-link.active .contact-item {
+    background-color: #ebebeb;
+}
+
+.contact-text {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-name {
+    font-weight: 500;
+}
+
+.last-msg {
+    font-size: 13px;
+    color: #667781;
+}
+
+/* Ventana de chat */
+.chat-window {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #efeae2;
+}
+
+.chat-header {
+    background-color: #f0f2f5;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 60px;
+    font-weight: bold;
+}

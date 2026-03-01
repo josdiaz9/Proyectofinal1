@@ -1,0 +1,41 @@
+.footer-container {
+    background-color: #f0f2f5; /* Gris clarito de la barra de WPP */
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.message-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 100%;
+}
+
+.message-input {
+    flex-grow: 1;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 20px; /* Bordes redondos */
+    outline: none;
+    font-family: inherit;
+    resize: none; /* Evita que el usuario lo estire con el mouse */
+    height: 20px; /* Altura inicial chica */
+}
+
+.send-button {
+    background-color: #00a884; /* Verde WhatsApp */
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Botón circular */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.send-button:hover {
+    background-color: #008f72;
+}

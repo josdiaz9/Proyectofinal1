@@ -9,8 +9,6 @@ import ContactsContextProvider from './Context/ContactsContext'
 
 function App() {
     return (
-        <div>
-            <img src='/vite.svg' />
             <ContactsContextProvider >
                 <Routes>
                     <Route
@@ -33,7 +31,6 @@ function App() {
                     />
                 </Routes>
             </ContactsContextProvider>
-        </div>
     )
 }
 

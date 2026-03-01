@@ -1,0 +1,66 @@
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #e5ddd5;
+    /* Fondo clásico de WhatsApp */
+    height: calc(100vh - 120px);
+    /* Restamos el espacio del cabezal y del input */
+    overflow-y: auto;
+    gap: 10px;
+}
+
+/* Fila que ocupa todo el ancho */
+.message-row {
+    display: flex;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+/* Alineación */
+.message-row.me {
+    justify-content: flex-end;
+    /* Tus mensajes a la derecha */
+}
+
+.message-row.other {
+    justify-content: flex-start;
+    /* Los de ellos a la izquierda */
+}
+
+/* La burbuja de texto */
+.bubble {
+    max-width: 70%;
+    padding: 8px 12px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    font-family: sans-serif;
+}
+
+.bubble h3 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+}
+
+/* Colores de las burbujas */
+.me .bubble {
+    background-color: #dcf8c6;
+    /* Verde WhatsApp */
+    border-top-right-radius: 0;
+}
+
+.other .bubble {
+    background-color: #ffffff;
+    /* Blanco */
+    border-top-left-radius: 0;
+}
+
+/* El texto de la hora o autor */
+.bubble span {
+    display: block;
+    font-size: 11px;
+    color: #999;
+    text-align: right;
+    margin-top: 4px;
+}

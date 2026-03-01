@@ -10,8 +10,7 @@ export default function ContactSidebar() {
     const { contacts, favorite_name } = useContext(ContactsContext)
   return (
     <div>
-        <h2>Whatsapp Clone</h2>
-        <h3>Me cae muy bien: {favorite_name}</h3>
+        <h2>Wassap</h2>
         <div>
             {
                 contacts.map(
