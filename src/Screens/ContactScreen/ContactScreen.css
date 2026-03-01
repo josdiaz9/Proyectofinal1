@@ -3,17 +3,21 @@
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    position: fixed;      /* Lo anclamos a la pantalla */
+    top: 0;
+    left: 0;
 }
 
-.sidebar {
-    width: 30%;
-    min-width: 300px;
+.sidebar-container {
+    width: 400px !important; 
+    min-width: 400px !important; 
+    flex-shrink: 0; 
     background-color: #fff;
     border-right: 1px solid #ddd;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
-
 /* Header de tu perfil */
 .my-profile-header {
     background-color: #f0f2f5;
@@ -45,6 +49,7 @@
     color: black;
     background-color: #ffffff; /* Fondo blanco para la lista */
     transition: background-color 0.2s ease;
+    height: 72px;
 }
 
 .contact-item:hover {
@@ -55,10 +60,11 @@
     background-color: #ebebeb;
 }
 
-.contact-text {
+.contact-text-container {
     margin-left: 15px;
     display: flex;
     flex-direction: column;
+    justify-content: center; /* Centra el nombre y la conexión verticalmente */
 }
 
 .contact-name {
@@ -86,4 +92,43 @@
     gap: 15px;
     height: 60px;
     font-weight: bold;
+}
+
+.last-connection {
+    font-size: 13px;
+    color: #667781;
+    margin-top: 2px;
+}
+
+.no-chat-selected {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #f0f2f5; /* Fondo gris claro de WPP */
+    color: #667781;
+    text-align: center;
+    box-sizing: border-box; /* Importante para que el borde no sume altura */
+    margin: 0; /* Aseguramos que el div no tenga margen */
+    padding: 0;
+}
+
+.no-chat-selected h1,
+.no-chat-selected h2 {
+    font-size: 32px;
+    font-weight: 300;
+    color: #41525d;
+    margin: 0; /* <--- CAMBIÁ EL MARGIN-TOP POR ESTE MARGIN CERO */
+    padding-bottom: 10px; /* Si querés espacio, usá padding, no margin */
+}
+
+.no-chat-selected p {
+    font-size: 14px;
+    color: #667781;
+    margin-top: 10px;
+    max-width: 400px;
+    line-height: 20px;
+    margin-left: auto; /* Estos dos centran el párrafo */
+    margin-right: auto;
 }
