@@ -14,6 +14,7 @@ const NewMessageForm = ({contact_id}) => {
         event.target.reset()
     }
 
+
     return (
         <div className="footer-container">
             <form onSubmit={handleSubmitNewMessage} className="message-form">
