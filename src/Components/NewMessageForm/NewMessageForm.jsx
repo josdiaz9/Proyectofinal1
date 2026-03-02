@@ -37,18 +37,8 @@ const NewMessageForm = ({contact_id}) => {
     function handleSubmitNewMessage(event) {
         event.preventDefault()
         const text = event.target.nuevo_mensaje.value
-
-        // Creamos el objeto con la forma que definimos en tu data
-        const new_message_obj = {
-            id: Date.now(), // Genera un ID único temporal
-            text: text,
-            send_by_me: true,
-            is_read: false, // <--- ESTO hará que se vea GRIS
-            created_at: new Date().toISOString()
-        }
-
-        // Ahora enviamos el objeto, no solo el string
-        addNewMessage(contact_id, new_message_obj)
+         // Ahora enviamos el objeto, no solo el string
+        addNewMessage(contact_id, text)
         
         event.target.reset()
     }
