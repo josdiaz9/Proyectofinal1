@@ -95,6 +95,7 @@ import React, { useContext } from 'react'
 import { ContactsContext } from '../../Context/ContactsContext'
 import { Link } from 'react-router'
 import './ContactSidebar.css'
+import SearchBar from '../Searchbar/Searchbar';
 
 export default function ContactSidebar() {
     const { contacts } = useContext(ContactsContext)
