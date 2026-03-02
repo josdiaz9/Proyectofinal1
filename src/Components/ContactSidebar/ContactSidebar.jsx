@@ -44,7 +44,7 @@ export default function ContactSidebar() {
   )
 }*/
 
-import React, { useContext } from 'react'
+/*import React, { useContext } from 'react'
 import { ContactsContext } from '../../Context/ContactsContext'
 import { Link } from 'react-router'
 import './ContactSidebar.css' // Asegurate de que el CSS esté importado
@@ -66,14 +66,14 @@ export default function ContactSidebar() {
                             key={contact.id}
                             className="contact-item" // Le agregamos la clase aquí
                         >
-                            {/* 1. Foto de perfil */}
+                            {}
                             <img
                                 src={contact.profile_picture}
                                 alt={contact.name}
                                 className="contact-avatar"
                             />
 
-                            {/* 2. Contenedor de info */}
+                            {}
                             <div className="contact-info">
                                 <div className="contact-header-row">
                                     <span className="contact-name">{contact.name}</span>
@@ -82,6 +82,77 @@ export default function ContactSidebar() {
                                 <span className="contact-status">
                                     {contact.last_time_connection}
                                 </span>
+                            </div>
+                        </Link>
+                    )
+                })}
+            </div>
+        </div>
+    )
+}*/
+
+import React, { useContext } from 'react'
+import { ContactsContext } from '../../Context/ContactsContext'
+import { Link } from 'react-router'
+import './ContactSidebar.css'
+
+export default function ContactSidebar() {
+    const { contacts } = useContext(ContactsContext)
+
+    return (
+        <div className="sidebar-content">
+            <header className="sidebar-header">
+                <h2>Chats</h2>
+            </header>
+
+            <div className="contacts-list">
+                {contacts.map((contact) => {
+                    // 1. Buscamos el último mensaje del array de este contacto
+                    const lastMsg = contact.messages[contact.messages.length - 1];
+
+                    return (
+                        <Link
+                            to={`/contact/${contact.id}`}
+                            key={contact.id}
+                            className="contact-item"
+                        >
+                            {/* Foto de perfil */}
+                            <img
+                                src={contact.profile_picture}
+                                alt={contact.name}
+                                className="contact-avatar"
+                            />
+
+                            {/* Contenedor de info */}
+                            <div className="contact-info">
+                                <div className="contact-header-row">
+                                    <span className="contact-name">{contact.name}</span>
+                                    
+                                    {/* 2. Muestra la HORA REAL del último mensaje */}
+                                    <span className="contact-time">
+                                        {new Date(lastMsg.created_at).toLocaleTimeString([], {
+                                            hour: '2-digit',
+                                            minute: '2-digit'
+                                        })}
+                                    </span>
+                                </div>
+
+                                <div className="contact-last-msg-row">
+                                    {/* 3. Muestra CHECKS solo si el último mensaje lo enviaste vos */}
+                                    {lastMsg.send_by_me && (
+                                        <span 
+                                            className="sidebar-check" 
+                                            style={{ color: lastMsg.is_read ? '#53bdeb' : '#8696a0' }}
+                                        >
+                                            ✓✓
+                                        </span>
+                                    )}
+                                    
+                                    {/* 4. Muestra el texto del ÚLTIMO MENSAJE */}
+                                    <span className="contact-last-text">
+                                        {lastMsg.text}
+                                    </span>
+                                </div>
                             </div>
                         </Link>
                     )
