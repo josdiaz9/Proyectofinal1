@@ -91,7 +91,7 @@ export default function ContactSidebar() {
     )
 }*/
 
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { ContactsContext } from '../../Context/ContactsContext'
 import { Link } from 'react-router'
 import './ContactSidebar.css'
@@ -99,17 +99,20 @@ import Searchbar from '../Searchbar/Searchbar';
 
 export default function ContactSidebar() {
     const { contacts } = useContext(ContactsContext)
+    const [searchTerm, setSearchTerm] = useState("");
+    const filteredContacts = contacts.filter(contact => 
+        contact.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
         <div className="sidebar-content">
             <header className="sidebar-header">
                 <h2>Chats</h2>
             </header>
-            <Searchbar />
+            <Searchbar onSearch={setSearchTerm} />
 
             <div className="contacts-list">
-                {contacts.map((contact) => {
-                    // 1. Buscamos el último mensaje del array de este contacto
+                {filteredContacts.map((contact) => {
                     const lastMsg = contact.messages[contact.messages.length - 1];
 
                     return (

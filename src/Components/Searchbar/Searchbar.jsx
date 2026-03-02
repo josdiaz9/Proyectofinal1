@@ -1,7 +1,7 @@
 import React from 'react';
 import './Searchbar.css';
 
-const SearchBar = () => {
+const Searchbar = ({ onSearch }) => {
     return (
         <div className="search-container">
             <div className="search-wrapper">
@@ -10,6 +10,7 @@ const SearchBar = () => {
                     type="text"
                     placeholder="Busca un chat o inicia uno nuevo"
                     className="search-input"
+                    onChange={(e) => onSearch(e.target.value)}
                 />
             </div>
         </div>
