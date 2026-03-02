@@ -56,7 +56,7 @@ export default function ContactScreen() {
                     />
                     <div className="header-info">
                       <h1 className="chat-name">{contact_selected.name}</h1>
-                      <span className="last-connection">en línea</span>
+                      <span className="last-connection">últ. vez {contact_selected.last_time_connection}</span>
                     </div>
                   </header>
 

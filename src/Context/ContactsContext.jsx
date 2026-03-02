@@ -21,7 +21,7 @@ const ContactsContextProvider = ({ children }) => {
                     if (Number(contact.id) === Number(contact_id)) {
                         contact.messages.push({
                             id: Date.now(),
-                            text: new_message_text, // El texto plano que viene del Form
+                            text: new_message, // El texto plano que viene del Form
                             send_by_me: true,
                             created_at: new Date().toISOString(),
                             is_read: false // <--- Esto hará que se vea GRIS
@@ -32,10 +32,14 @@ const ContactsContextProvider = ({ children }) => {
             }
         )
     }
-
+    const sortedContacts = [...contactsState].sort((a, b) => {
+        const lastMsgA = new Date(a.messages[a.messages.length - 1].created_at);
+        const lastMsgB = new Date(b.messages[b.messages.length - 1].created_at);
+        return lastMsgB - lastMsgA;
+    });
     // Aquí borré el favorite_name
     const provider_values = {
-        contacts: contactsState,
+        contacts: sortedContacts,
         addNewMessage
     }
 
