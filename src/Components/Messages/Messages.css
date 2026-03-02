@@ -71,3 +71,23 @@
     text-align: right;
     margin-top: 4px;
 }
+
+.check-blue {
+    color: #53bdeb; /* <--- ESTO ES LO QUE FALTABA: El celeste de WhatsApp */
+    margin-left: 4px;
+    font-size: 14px;
+}
+
+.check-grey {
+    color: #8696a0; /* <--- El gris de mensaje entregado */
+    margin-left: 4px;
+    font-size: 14px;
+}
+/* Ajuste para que el texto y los checks convivan bien */
+.message-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+}

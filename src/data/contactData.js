@@ -22,7 +22,7 @@ const contacts = [
                 text: 'Emm dejame que lo pienso, ando medio ocupado haciendo un proyecto final de la utn',
                 send_by_me: true,
                 created_at: '2024-06-01T12:05:00Z',
-                is_read: false
+                is_read: true
             },
 
         ]
@@ -60,7 +60,7 @@ const contacts = [
                 text: 'Tranka amigo, recuperate bien asi jugas el proximo partido a full',
                 send_by_me: true,
                 created_at: '2024-06-01T12:05:00Z',
-                is_read: false
+                is_read: true
             }
         ]
     },
@@ -75,7 +75,7 @@ const contacts = [
                 text: 'Douuuuuu',
                 send_by_me: false,
                 created_at: '2024-06-01T12:00:00Z',
-                is_read: false
+                is_read: true
             }
         ]
     },
@@ -97,7 +97,7 @@ const contacts = [
                 text: 'tudo bem mano, y voce?',
                 send_by_me: false,
                 created_at: '2024-06-01T12:05:00Z',
-                is_read: false
+                is_read: true
             }
         ]
     },
@@ -119,7 +119,7 @@ const contacts = [
                 text: 'Nose chuerk, cuando me haga un tiempo voy d1',
                 send_by_me: true,
                 created_at: '2024-06-01T12:05:00Z',
-                is_read: false
+                is_read: true
             }
         ]
     },
@@ -141,7 +141,7 @@ const contacts = [
                 text: 'Si amigo, ni yo se como lo meti jaajajas',
                 send_by_me: false,
                 created_at: '2024-06-01T12:05:00Z',
-                is_read: false
+                is_read: true
             }
         ]
     }
