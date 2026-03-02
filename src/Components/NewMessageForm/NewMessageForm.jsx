@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { ContactsContext } from '../../Context/ContactsContext'
-import './temp.css';
+import './NewMessageForm.css';
 
 const NewMessageForm = ({contact_id}) => {
     const {addNewMessage} = useContext(ContactsContext)
