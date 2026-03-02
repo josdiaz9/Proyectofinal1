@@ -82,6 +82,9 @@
     display: flex;
     flex-direction: column;
     background-color: #efeae2;
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    background-repeat: repeat;
+    background-blend-mode: overlay; /* Esto hace que los dibujos sean sutiles */
 }
 
 .chat-header {
@@ -89,9 +92,30 @@
     padding: 10px 16px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     height: 60px;
-    font-weight: bold;
+    border-left: 1px solid #d1d7db; /* Línea que separa de la sidebar */
+    box-sizing: border-box;
+    flex-shrink: 0;   /* Evita que el header se achique si hay muchos mensajes */
+    position: relative; 
+    z-index: 100;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;  /* Evita que el texto rompa el layout */
+    flex-grow: 1;
+}
+
+.chat-header h1 {
+    font-size: 16px;
+    margin: 0 !important; /* El !important asegura que nada lo mueva */
+    padding: 0;
+    font-weight: 500;
+    color: #111b21;
+    line-height: 1.2;
 }
 
 .last-connection {
@@ -112,6 +136,7 @@
     box-sizing: border-box; /* Importante para que el borde no sume altura */
     margin: 0; /* Aseguramos que el div no tenga margen */
     padding: 0;
+    border-bottom: 6px solid #43c960;
 }
 
 .no-chat-selected h1,
@@ -131,4 +156,23 @@
     line-height: 20px;
     margin-left: auto; /* Estos dos centran el párrafo */
     margin-right: auto;
+}
+
+.welcome-icon {
+    font-size: 100px;      /* Lo hacemos bien grande */
+    margin-bottom: 20px;   /* Despegamos el texto de abajo */
+    opacity: 0.2;          /* Lo hacemos casi transparente (marca de agua) */
+    filter: grayscale(1);  /* Le quitamos el color para que sea gris como el fondo */
+    user-select: none;     /* Para que no se pueda seleccionar como texto */
+}
+
+.avatar-img-small {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0; /* Para que no se aplaste */
+    margin-right: 0px; /* Un poquito de aire a la derecha */
+    background-color: #dfe5e7; /* Un gris más clarito tipo WPP */
 }

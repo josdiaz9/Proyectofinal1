@@ -2,13 +2,12 @@ import { createContext, useState } from "react";
 import { getContacts } from "../services/contactsService";
 
 export const ContactsContext = createContext(
-    //Representa el valor inicial del contexto, es decir, lo que va devolver el contexto por defecto, nos sirve para saber que propiedades va a tener el contexto, aunque luego se van a modificar
     {
         contacts: [],
-        favorite_name: '',
         addNewMessage: (contact_id, new_message) => { }
     }
 )
+
 const ContactsContextProvider = ({ children }) => {
     const contacts = getContacts()
     const [contactsState, setContactsState] = useState(contacts)
@@ -32,26 +31,19 @@ const ContactsContextProvider = ({ children }) => {
                 return cloned_state
             }
         )
-
     }
 
+    // Aquí borré el favorite_name
     const provider_values = {
         contacts: contactsState,
-        favorite_name: 'pepe',
         addNewMessage
     }
 
-
     return (
-        /* 
-        Creamos el proveedor de contexto y pasamos la prop value que es basicamente lo que se podra consumir del contexto
-        */
-        <ContactsContext.Provider
-            value={provider_values}
-        >
+        <ContactsContext.Provider value={provider_values}>
             {children}
         </ContactsContext.Provider>
     )
 }
 
-export default ContactsContextProvider
+export default ContactsContextProvider;

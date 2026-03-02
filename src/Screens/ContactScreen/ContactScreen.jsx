@@ -13,8 +13,9 @@ export default function ContactScreen() {
   const { contact_id } = useParams()
 
   //Busco el contacto seleccionado en la lista de contactos
-  const contact_selected = contacts.find(contact => Number(contact.id) === Number(contact_id))
-
+  //const contact_selected = contacts.find(contact => Number(contact.id) === Number(contact_id))
+  const contact_selected = contacts.find(contact => String(contact.id) === String(contact_id))
+  console.log("Datos del contacto:", contact_selected);
   return (
     <div className="chat-interface">
       <div className="sidebar-container">
@@ -45,9 +46,14 @@ export default function ContactScreen() {
               (
                 <>
                   <header className="chat-header">
-                    <img src={contact_selected.thumbnail} alt="" className="avatar-img-small" />
-                    <h1>{contact_selected.name}</h1>
+                    <img src={contact_selected.thumbnail} alt={contact_selected.name} className="avatar-img-small" />
+                    <div className="header-info">
+                      <h1 className="chat-name">{contact_selected.name}</h1>
+                      <span className="last-connection">en línea</span>
+                    </div>
                   </header>
+
+                  {/* El área de mensajes y el form se quedan igual */}
                   <Messages contact_selected={contact_selected} />
                   <NewMessageForm contact_id={contact_id} />
                 </>
@@ -73,3 +79,13 @@ export default function ContactScreen() {
           <NewMessageForm contact_id={contact_id} />
         </>
       }*/
+
+/*<> en la parte final
+                  <header className="chat-header">
+                    <img src={contact_selected.thumbnail} alt="" className="avatar-img-small" />
+                    <h1>{contact_selected.name}</h1>
+                  </header>
+                  <Messages contact_selected={contact_selected} />
+                  <NewMessageForm contact_id={contact_id} />
+                </>
+                */
