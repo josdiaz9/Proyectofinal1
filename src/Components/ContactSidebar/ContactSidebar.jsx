@@ -105,6 +105,7 @@ export default function ContactSidebar() {
             <header className="sidebar-header">
                 <h2>Chats</h2>
             </header>
+            <Searchbar />
 
             <div className="contacts-list">
                 {contacts.map((contact) => {
