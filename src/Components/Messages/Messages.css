@@ -8,6 +8,7 @@
     /* Restamos el espacio del cabezal y del input */
     overflow-y: auto;
     gap: 10px;
+    scroll-behavior: smooth;
 }
 
 /* Fila que ocupa todo el ancho */
@@ -36,8 +37,12 @@
     position: relative;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     font-family: sans-serif;
-}
 
+    /* --- ESTO ES LO QUE ARREGLA EL LARGO --- */
+    word-wrap: break-word;     /* Corta palabras largas */
+    overflow-wrap: break-word; /* Estándar moderno para cortar */
+    word-break: break-word;    /* Asegura que no se pase del 70% */
+}
 .bubble h3 {
     margin: 0 0 5px 0;
     font-size: 14px;
@@ -48,12 +53,14 @@
     background-color: #dcf8c6;
     /* Verde WhatsApp */
     border-top-right-radius: 0;
+    margin-right: 10px;
 }
 
 .other .bubble {
     background-color: #ffffff;
     /* Blanco */
     border-top-left-radius: 0;
+    margin-left: 10px;
 }
 
 /* El texto de la hora o autor */

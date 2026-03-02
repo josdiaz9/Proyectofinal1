@@ -46,7 +46,14 @@ export default function ContactScreen() {
               (
                 <>
                   <header className="chat-header">
-                    <img src={contact_selected.thumbnail} alt={contact_selected.name} className="avatar-img-small" />
+                    <img
+                      src={contact_selected.profile_picture} // <--- CAMBIÁ thumbnail POR profile_picture
+                      alt={contact_selected.name}
+                      className="avatar-img-small"
+                      onError={(e) => {
+                        e.target.src = `https://ui-avatars.com/api/?name=${contact_selected.name}`;
+                      }}
+                    />
                     <div className="header-info">
                       <h1 className="chat-name">{contact_selected.name}</h1>
                       <span className="last-connection">en línea</span>

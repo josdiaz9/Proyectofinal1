@@ -92,13 +92,13 @@
     padding: 10px 16px;
     display: flex;
     align-items: center;
-    gap: 12px;
     height: 60px;
     border-left: 1px solid #d1d7db; /* Línea que separa de la sidebar */
     box-sizing: border-box;
     flex-shrink: 0;   /* Evita que el header se achique si hay muchos mensajes */
     position: relative; 
     z-index: 100;
+    cursor: pointer;
 }
 
 .header-info {
@@ -121,7 +121,8 @@
 .last-connection {
     font-size: 13px;
     color: #667781;
-    margin-top: 2px;
+    margin-top: 1px;
+    line-height: 1;
 }
 
 .no-chat-selected {
@@ -173,6 +174,6 @@
     object-fit: cover;
     display: block;
     flex-shrink: 0; /* Para que no se aplaste */
-    margin-right: 0px; /* Un poquito de aire a la derecha */
+    margin-right: 15px; /* Un poquito de aire a la derecha */
     background-color: #dfe5e7; /* Un gris más clarito tipo WPP */
 }
