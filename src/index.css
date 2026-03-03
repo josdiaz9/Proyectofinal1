@@ -76,6 +76,10 @@ html, body, #root {
     .back-button-mobile:active {
         background-color: rgba(0, 0, 0, 0.1);
     }
+    .app-container:not(.chat-open) .sidebar-container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
 }
 
 /* IMPORTANTE: Fuera del media query la flecha NUNCA se ve */
