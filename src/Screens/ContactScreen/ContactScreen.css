@@ -1,4 +1,4 @@
-.chat-interface {
+.app-container {
     display: flex;
     height: 100vh;
     width: 100vw;
@@ -120,6 +120,7 @@
     position: relative;
     z-index: 100;
     cursor: pointer;
+    gap: 10px;
 }
 
 .header-info {

@@ -38,43 +38,47 @@ html, body, #root {
 
 /* CONFIGURACIÓN PARA CELULARES (320px a 768px) */
 @media (max-width: 768px) {
-    /* Forzamos que el contenedor no tenga scroll global */
     html, body, #root {
         overflow: hidden !important;
     }
 
-    /* Cuando NO hay un chat abierto (estamos en la lista) */
+    /* Ocultar chat si no hay contacto seleccionado */
     .app-container:not(.chat-open) .chat-window {
         display: none !important;
     }
 
-    /* Cuando SÍ hay un chat abierto (ocultamos la lista) */
+    /* Ocultar lista si el chat está abierto */
     .app-container.chat-open .sidebar-container {
         display: none !important;
     }
 
-    /* Hacemos que lo que quede visible ocupe toda la pantalla */
     .sidebar-container, .chat-window {
         width: 100% !important;
         height: 100vh !important;
         flex: none !important;
     }
 
-    /* Mostramos la flechita ← */
+    /* FLECHA ESTILO WHATSAPP MOBILE */
     .back-button-mobile {
-        display: flex !important; /* Ahora sí va a aparecer */
+        display: flex !important;
         align-items: center;
         justify-content: center;
-        font-size: 28px;
+        font-size: 24px; 
         text-decoration: none;
-        color: #667781;
-        margin-right: 15px;
-        padding: 5px;
+        color: #54656f; /* Gris WhatsApp */
+        margin-right: 8px;
+        padding: 5px 10px;
+        border-radius: 50%;
+        font-weight: bold;
         cursor: pointer;
+    }
+
+    .back-button-mobile:active {
+        background-color: rgba(0, 0, 0, 0.1);
     }
 }
 
-/* En monitores grandes, la flecha desaparece */
+/* IMPORTANTE: Fuera del media query la flecha NUNCA se ve */
 .back-button-mobile {
     display: none;
 }
