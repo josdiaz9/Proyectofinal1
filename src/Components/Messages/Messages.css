@@ -3,33 +3,26 @@
     flex-direction: column;
     padding: 20px;
     background-color: #e5ddd5;
-    /* Fondo clásico de WhatsApp */
     height: calc(100vh - 120px);
-    /* Restamos el espacio del cabezal y del input */
     overflow-y: auto;
     gap: 10px;
     scroll-behavior: smooth;
 }
 
-/* Fila que ocupa todo el ancho */
 .message-row {
     display: flex;
     width: 100%;
     margin-bottom: 12px;
 }
 
-/* Alineación */
 .message-row.me {
     justify-content: flex-end;
-    /* Tus mensajes a la derecha */
 }
 
 .message-row.other {
     justify-content: flex-start;
-    /* Los de ellos a la izquierda */
 }
 
-/* La burbuja de texto */
 .bubble {
     max-width: 70%;
     padding: 8px 12px;
@@ -37,33 +30,27 @@
     position: relative;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     font-family: sans-serif;
-
-    /* --- ESTO ES LO QUE ARREGLA EL LARGO --- */
-    word-wrap: break-word;     /* Corta palabras largas */
-    overflow-wrap: break-word; /* Estándar moderno para cortar */
-    word-break: break-word;    /* Asegura que no se pase del 70% */
+    word-wrap: break-word;     
+    overflow-wrap: break-word; 
+    word-break: break-word;
 }
 .bubble h3 {
     margin: 0 0 5px 0;
     font-size: 14px;
 }
 
-/* Colores de las burbujas */
 .me .bubble {
     background-color: #dcf8c6;
-    /* Verde WhatsApp */
     border-top-right-radius: 0;
     margin-right: 10px;
 }
 
 .other .bubble {
     background-color: #ffffff;
-    /* Blanco */
     border-top-left-radius: 0;
     margin-left: 10px;
 }
 
-/* El texto de la hora o autor */
 .bubble span {
     display: block;
     font-size: 11px;
@@ -73,17 +60,17 @@
 }
 
 .check-blue {
-    color: #53bdeb; /* <--- ESTO ES LO QUE FALTABA: El celeste de WhatsApp */
+    color: #53bdeb;
     margin-left: 4px;
     font-size: 14px;
 }
 
 .check-grey {
-    color: #8696a0; /* <--- El gris de mensaje entregado */
+    color: #8696a0;
     margin-left: 4px;
     font-size: 14px;
 }
-/* Ajuste para que el texto y los checks convivan bien */
+
 .message-info {
     display: flex;
     justify-content: flex-end;

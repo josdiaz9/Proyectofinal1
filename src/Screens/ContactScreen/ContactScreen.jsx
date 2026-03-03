@@ -8,15 +8,10 @@ import './ContactScreen.css'
 
 export default function ContactScreen() {
   const { contacts } = useContext(ContactsContext)
-
-  // Obtengo el id del contacto seleccionado a traves de los parametros de la url
   const { contact_id } = useParams()
-
-  // Busco el contacto seleccionado en la lista de contactos
   const contact_selected = contacts.find(contact => String(contact.id) === String(contact_id))
 
   return (
-    /* Cambiamos chat-interface por app-container y agregamos la lógica de chat-open */
     <div className={`app-container ${contact_id ? 'chat-open' : ''}`}>
 
       <div className="sidebar-container">

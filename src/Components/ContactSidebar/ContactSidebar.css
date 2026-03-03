@@ -1,68 +1,3 @@
-/*.sidebar-content {
-    background-color: #fff;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.sidebar-header {
-    padding: 20px;
-    background-color: #f0f2f5;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    padding: 12px 16px;
-    text-decoration: none; 
-    color: inherit;
-    border-bottom: 1px solid #f0f2f5;
-    transition: background 0.2s;
-}
-
-.contact-item:hover {
-    background-color: #f5f6f6;
-}
-
-.contact-avatar {
-    width: 49px;
-    height: 49px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 20px;
-}
-
-.contact-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-header-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 4px;
-}
-
-.contact-name {
-    font-weight: 500;
-    color: #111b21;
-    font-size: 16px;
-}
-
-.contact-time {
-    font-size: 12px;
-    color: #667781;
-}
-
-.contact-status {
-    font-size: 13px;
-    color: #667781;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}*/
-
 .sidebar-content {
     background-color: #fff;
     height: 100%;
@@ -71,12 +6,12 @@
 }
 
 .sidebar-header {
-    height: 60px; /* <--- LA MEDIDA MÁGICA */
+    height: 60px; 
     display: flex;
     align-items: center;
-    padding: 0 16px; /* Solo padding a los costados */
+    padding: 0 16px; 
     background-color: #f0f2f5;
-    box-sizing: border-box; /* Para que el padding no sume a los 60px */
+    box-sizing: border-box;
 }
 
 .sidebar-header h1 {
@@ -105,14 +40,14 @@
     height: 49px;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 15px; /* Un poquito menos de margen para que entre todo */
+    margin-right: 15px; 
 }
 
 .contact-info {
     flex: 1;
     display: flex;
     flex-direction: column;
-    min-width: 0; /* IMPORTANTE: para que el "..." funcione */
+    min-width: 0; 
 }
 
 .contact-header-row {
@@ -133,16 +68,14 @@
     color: #667781;
 }
 
-/* --- LO NUEVO --- */
-
 .contact-last-msg-row {
     display: flex;
     align-items: center;
-    gap: 4px; /* Espacio entre el ✓✓ y el texto */
+    gap: 4px; 
 }
 
 .sidebar-check {
-    font-size: 15px; /* Tamaño de los tildes */
+    font-size: 15px; 
     line-height: 1;
 }
 
@@ -151,7 +84,7 @@
     color: #667781;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* Pone los "..." si el mensaje es largo */
+    text-overflow: ellipsis;
     display: block;
     flex: 1;
 }

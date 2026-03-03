@@ -1,12 +1,12 @@
 .app-container {
-    display: flex;
-    height: 100vh;
-    width: 100vw;
+    display: flex;       
+    width: 100vw;        
+    height: 100vh;       
     overflow: hidden;
-    position: fixed;
-    /* Lo anclamos a la pantalla */
+    position: fixed;     
     top: 0;
     left: 0;
+    background-color: #fff;
 }
 
 .sidebar-container {
@@ -20,7 +20,6 @@
     height: 100%;
 }
 
-/* Header de tu perfil */
 .my-profile-header {
     background-color: #f0f2f5;
     padding: 10px 16px;
@@ -47,11 +46,9 @@
     padding: 12px;
     align-items: center;
     border-bottom: 1px solid #f2f2f2;
-    /* Línea divisoria más sutil */
     text-decoration: none;
     color: black;
     background-color: #ffffff;
-    /* Fondo blanco para la lista */
     transition: background-color 0.2s ease;
     height: 72px;
 }
@@ -69,7 +66,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Centra el nombre y la conexión verticalmente */
 }
 
 .contact-name {
@@ -81,17 +77,15 @@
     color: #667781;
 }
 
-/* Ventana de chat */
 .chat-window {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    position: relative; /* Clave para que funcione el fondo */
+    position: relative;
     background-color: #efeae2; 
     overflow: hidden;
 }
 
-/* El fondo lo ponemos acá para poder controlar su transparencia solito */
 .chat-window::before {
     content: "";
     position: absolute;
@@ -101,7 +95,7 @@
     height: 100%;
     background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png'); 
     background-repeat: repeat;
-    opacity: 0.1; /* Esto hace que los dibujos sean súper suaves */
+    opacity: 0.1;
     pointer-events: none;
     z-index: 0;
 }
@@ -113,10 +107,8 @@
     align-items: center;
     height: 60px;
     border-left: 1px solid #d1d7db;
-    /* Línea que separa de la sidebar */
     box-sizing: border-box;
     flex-shrink: 0;
-    /* Evita que el header se achique si hay muchos mensajes */
     position: relative;
     z-index: 100;
     cursor: pointer;
@@ -128,14 +120,12 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    /* Evita que el texto rompa el layout */
     flex-grow: 1;
 }
 
 .chat-header h1 {
     font-size: 16px;
     margin: 0 !important;
-    /* El !important asegura que nada lo mueva */
     padding: 0;
     font-weight: 500;
     color: #111b21;
@@ -154,15 +144,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
     height: 100%;
     background-color: #f0f2f5;
-    /* Fondo gris claro de WPP */
     color: #667781;
     text-align: center;
     box-sizing: border-box;
-    /* Importante para que el borde no sume altura */
     margin: 0;
-    /* Aseguramos que el div no tenga margen */
     padding: 0;
 }
 
@@ -172,9 +160,7 @@
     font-weight: 300;
     color: #41525d;
     margin: 0;
-    /* <--- CAMBIÁ EL MARGIN-TOP POR ESTE MARGIN CERO */
     padding-bottom: 10px;
-    /* Si querés espacio, usá padding, no margin */
 }
 
 .no-chat-selected p {
@@ -184,21 +170,15 @@
     max-width: 400px;
     line-height: 20px;
     margin-left: auto;
-    /* Estos dos centran el párrafo */
     margin-right: auto;
 }
 
 .welcome-icon {
     font-size: 100px;
-    /* Lo hacemos bien grande */
     margin-bottom: 20px;
-    /* Despegamos el texto de abajo */
     opacity: 0.2;
-    /* Lo hacemos casi transparente (marca de agua) */
     filter: grayscale(1);
-    /* Le quitamos el color para que sea gris como el fondo */
     user-select: none;
-    /* Para que no se pueda seleccionar como texto */
 }
 
 .avatar-img-small {
@@ -208,9 +188,6 @@
     object-fit: cover;
     display: block;
     flex-shrink: 0;
-    /* Para que no se aplaste */
     margin-right: 15px;
-    /* Un poquito de aire a la derecha */
     background-color: #dfe5e7;
-    /* Un gris más clarito tipo WPP */
 }

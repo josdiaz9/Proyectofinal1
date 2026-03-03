@@ -1,5 +1,5 @@
 const userData = {
-    id: 0, // ID único para el dueño
+    id: 0,
     name: 'Eze',
     avatar: 'https://content.imageresizer.com/images/memes/Happy-Monkey-NOW-meme-6.jpg',
 };
