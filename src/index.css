@@ -6,7 +6,75 @@
 
 html, body, #root {
     width: 100%;
-    height: 100vh; /* Ocupa el alto exacto de la pantalla */
-    overflow: hidden; /* Prohibido el scroll en TODA la página */
+    height: 100vh;
+    overflow: hidden; 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* LA BASE (PC y Notebooks) */
+.app-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+/* CONFIGURACIÓN PARA PANTALLAS GRANDES (Hasta 2000px) */
+@media (min-width: 1441px) {
+    #root {
+        background-color: #d1d7db;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .app-container { 
+        width: 1600px;
+        max-width: 95%; 
+        height: 95vh;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* CONFIGURACIÓN PARA CELULARES (320px a 768px) */
+@media (max-width: 768px) {
+    /* Forzamos que el contenedor no tenga scroll global */
+    html, body, #root {
+        overflow: hidden !important;
+    }
+
+    /* Cuando NO hay un chat abierto (estamos en la lista) */
+    .app-container:not(.chat-open) .chat-window {
+        display: none !important;
+    }
+
+    /* Cuando SÍ hay un chat abierto (ocultamos la lista) */
+    .app-container.chat-open .sidebar-container {
+        display: none !important;
+    }
+
+    /* Hacemos que lo que quede visible ocupe toda la pantalla */
+    .sidebar-container, .chat-window {
+        width: 100% !important;
+        height: 100vh !important;
+        flex: none !important;
+    }
+
+    /* Mostramos la flechita ← */
+    .back-button-mobile {
+        display: flex !important; /* Ahora sí va a aparecer */
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        text-decoration: none;
+        color: #667781;
+        margin-right: 15px;
+        padding: 5px;
+        cursor: pointer;
+    }
+}
+
+/* En monitores grandes, la flecha desaparece */
+.back-button-mobile {
+    display: none;
 }

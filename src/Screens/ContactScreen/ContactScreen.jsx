@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import ContactSidebar from '../../Components/ContactSidebar/ContactSidebar'
-import { useParams } from 'react-router'
+import { useParams, Link } from 'react-router'
 import { ContactsContext } from '../../Context/ContactsContext'
 import NewMessageForm from '../../Components/NewMessageForm/NewMessageForm'
 import Messages from '../../Components/Messages/Messages'
@@ -9,22 +9,22 @@ import './ContactScreen.css'
 export default function ContactScreen() {
   const { contacts } = useContext(ContactsContext)
 
-  //Obtengo el id del contacto seleccionado a traves de los parametros de la url
+  // Obtengo el id del contacto seleccionado a traves de los parametros de la url
   const { contact_id } = useParams()
 
-  //Busco el contacto seleccionado en la lista de contactos
-  //const contact_selected = contacts.find(contact => Number(contact.id) === Number(contact_id))
+  // Busco el contacto seleccionado en la lista de contactos
   const contact_selected = contacts.find(contact => String(contact.id) === String(contact_id))
-  console.log("Datos del contacto:", contact_selected);
+
   return (
-    <div className="chat-interface">
+    /* Cambiamos chat-interface por app-container y agregamos la lógica de chat-open */
+    <div className={`app-container ${contact_id ? 'chat-open' : ''}`}>
+
       <div className="sidebar-container">
         <ContactSidebar />
       </div>
-      {/* Si el contacto seleccionado no existe, muestro un mensaje si no, muestro el contacto */}
+
       <div className="chat-window">
         {
-          /* 1. CASO INICIO: Si NO hay id en la URL (Página recién cargada) */
           !contact_id ? (
             <div className="no-chat-selected">
               <div className="welcome-container">
@@ -34,20 +34,21 @@ export default function ContactScreen() {
               </div>
             </div>
           ) :
-
-            /* 2. CASO ERROR (LO DEL PROFE): Si hay ID pero no encontramos al usuario */
             !contact_selected ? (
               <div className="no-chat-selected">
+                {/* Agregamos flecha por si el ID no existe */}
+                <Link to="/" className="back-button-mobile">←</Link>
                 <h1>El contacto seleccionado no existe</h1>
               </div>
             ) :
-
-              /* 3. CASO ÉXITO: Hay ID y el usuario existe, mostramos el chat */
               (
                 <>
                   <header className="chat-header">
+                    {/* LA FLECHITA: Solo aparecerá en celulares por el CSS */}
+                    <Link to="/" className="back-button-mobile">←</Link>
+
                     <img
-                      src={contact_selected.profile_picture} // <--- CAMBIÁ thumbnail POR profile_picture
+                      src={contact_selected.profile_picture}
                       alt={contact_selected.name}
                       className="avatar-img-small"
                       onError={(e) => {
@@ -60,39 +61,12 @@ export default function ContactScreen() {
                     </div>
                   </header>
 
-                  {/* El área de mensajes y el form se quedan igual */}
                   <Messages contact_selected={contact_selected} />
                   <NewMessageForm contact_id={contact_id} />
                 </>
               )
         }
-
       </div>
     </div>
   )
-}
-
-/* { esto en el chat window
-          ! contact_selected 
-          ? <div className="no-chat-selected">
-            <h1>El contacto seleccionado no existe</h1>
-            </div>
-          : <>
-          <header className="chat-header">
-                <img src={contact_selected.thumbnail} alt="" className="avatar-img-small" />
-                <h1>{contact_selected.name}</h1>
-              </header>
-          <Messages contact_selected={contact_selected} />
-          <NewMessageForm contact_id={contact_id} />
-        </>
-      }*/
-
-/*<> en la parte final
-                  <header className="chat-header">
-                    <img src={contact_selected.thumbnail} alt="" className="avatar-img-small" />
-                    <h1>{contact_selected.name}</h1>
-                  </header>
-                  <Messages contact_selected={contact_selected} />
-                  <NewMessageForm contact_id={contact_id} />
-                </>
-                */
+  }
