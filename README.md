@@ -9,6 +9,3 @@ Este proyecto es un clon de la interfaz de WhatsApp Web hecho con React. La idea
 
 ### Lo que más me costó:
 Lo más complicado fue acomodar el CSS para que el diseño no se rompa al pasar de monitor a celular, sobre todo el tema de ocultar y mostrar la barra lateral. También hubo que renegar un poco para que los contenedores ocupen siempre el 100% del alto y ancho de la pantalla sin dejar espacios vacíos.
-
----
-*Ezequiel - 2026*
